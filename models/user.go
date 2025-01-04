@@ -11,6 +11,7 @@ type UserRole string
 const (
 	Manager UserRole = "manager"
 	Attendance UserRole = "attendee"
+	Client UserRole = "client"
 )
 
 type User struct {
