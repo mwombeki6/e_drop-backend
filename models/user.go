@@ -9,16 +9,16 @@ import (
 type UserRole string
 
 const (
-	Manager UserRole = "manager"
+	Manager    UserRole = "manager"
 	Attendance UserRole = "attendee"
-	Client UserRole = "client"
+	Client     UserRole = "client"
 )
 
 type User struct {
-	ID  uint `json:"id" gorm:"primarykey"`
-	Email string `json:"email" gorm:"text;not null"`
-	Role UserRole `json:"role" gorm:"text;default:attendee"`
-	Password string `json:"-"` // Do not compute this password in json
+	ID        uint      `json:"id" gorm:"primarykey"`
+	Email     string    `json:"email" gorm:"text;not null"`
+	Role      UserRole  `json:"role" gorm:"text;default:attendee"`
+	Password  string    `json:"-"` // Do not compute this password in json
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
