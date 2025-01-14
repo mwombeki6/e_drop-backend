@@ -35,6 +35,6 @@ func main()  {
 
 	//privateRoutes := server.Use(middlewares.AuthProtected(db))
 
-	app.Listen(fmt.Sprintf(":" + envConfig.ServerPort))
+	app.Listen(fmt.Sprintf("%s", ":" + envConfig.ServerPort))
 
 }
