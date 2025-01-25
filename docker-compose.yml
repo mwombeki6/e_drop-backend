@@ -4,8 +4,8 @@ services:
   app:
     tty: true #keep the container running
     restart: always
-    image: AxEnergies
-    container_name: AxEnergies
+    image: axEnergies
+    container_name: axenergies
     build: .
     ports:
       - 8081:8081
