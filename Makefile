@@ -9,4 +9,4 @@ start:
 
 stop:
 	@docker compose rm -v --force --stop
-	@docker rmi AxEnergies
+	@docker rmi axenergies

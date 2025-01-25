@@ -4,8 +4,8 @@ services:
   app:
     tty: true #keep the container running
     restart: always
-    image: axEnergies
-    container_name: axenergies
+    image: axenergies
+    container_name: axEnergies
     build: .
     ports:
       - 8081:8081
@@ -21,7 +21,7 @@ services:
     command: air -c .air.toml
   db:
     image: postgres
-    container_name: e-water-db
+    container_name: axEnergies-DB
     environment:
       - POSTGRES_HOST=${DB_HOST}
       - POSTGRES_DB=${DB_NAME}
