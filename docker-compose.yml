@@ -4,8 +4,8 @@ services:
   app:
     tty: true #keep the container running
     restart: always
-    image: e_water
-    container_name: e-water
+    image: AxEnergies
+    container_name: AxEnergies
     build: .
     ports:
       - 8081:8081
@@ -38,9 +38,21 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
 
 networks:
   application:
 
 volumes:
   postgres-db:  
+  pgadmin-data:
