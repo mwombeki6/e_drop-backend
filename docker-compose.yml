@@ -21,7 +21,7 @@ services:
     command: air -c .air.toml
   db:
     image: postgres
-    container_name: axEnergies-DB
+    container_name: axenergies-db
     environment:
       - POSTGRES_HOST=${DB_HOST}
       - POSTGRES_DB=${DB_NAME}
@@ -49,6 +49,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - application
 
 networks:
   application:
